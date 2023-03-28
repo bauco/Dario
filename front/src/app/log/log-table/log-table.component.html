@@ -1,0 +1,21 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="data">
+      <ng-container matColumnDef="log_date">
+        <th mat-header-cell *matHeaderCellDef>Log Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.log_date }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="success_count">
+        <th mat-header-cell *matHeaderCellDef>Success Count</th>
+        <td mat-cell *matCellDef="let element">{{ element.success_count }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="failed_count">
+        <th mat-header-cell *matHeaderCellDef>Failed Count</th>
+        <td mat-cell *matCellDef="let element">{{ element.failed_count }}</td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

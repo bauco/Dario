@@ -1,0 +1,46 @@
+<form class="filter-form">
+  <div class="form-group row">
+    <div class="col-sm-4">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Country</mat-label>
+        <mat-select [(value)]="selectedCountry" name="selectedCountry">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let country of countries" [value]="country.cnt_id">{{ country.cnt_title }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>User</mat-label>
+        <mat-select [(value)]="selectedUser" name="selectedUser">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let user of users" [value]="user.usr_id">{{ user.usr_name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>From</mat-label>
+        <input matInput [matDatepicker]="fromDatepicker" [(ngModel)]="fromDate" name="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="fromDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #fromDatepicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>To</mat-label>
+        <input matInput [matDatepicker]="toDatepicker" [(ngModel)]="toDate" name="toDate">
+        <mat-datepicker-toggle matSuffix [for]="toDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #toDatepicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+      <button id="submit-button" type="submit" class="btn btn-primary btn-block" (click)="filter()">Submit</button>
+  </form>
+<app-log-table class="log-table" [data]="data"></app-log-table>

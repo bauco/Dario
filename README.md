@@ -11,8 +11,13 @@ Server & MySQL DB should run on `http://localhost:80/`. otherwise change the rou
 
 This project consists of a PHP Model class and a front-end web page for displaying aggregated information from the send_log table in a database.
 # Installation
-Clone the project repository to your local machine.
-To use the project, simply open the front-end web page in a web browser and enter the desired filter criteria to display the aggregated send log information.
+Clone the project repository to your local machine\server.
+
+\backend\ deployd on ~\xampp\htdocs\Dario\backend\* or other server route (port 80)
+sql tables data can be import from to \sql data\dario.sql
+\front\ run npm i
+run ng serve \ build
+serve -> open your browser on http://localhost:4200/ and enter the desired filter criteria to display the aggregated send log information.
 
 PHP Model Class
 The SendLogModel class is responsible for getting the aggregated send log information from the database based on the specified filter criteria. The class has the following public method:
